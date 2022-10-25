@@ -1,0 +1,26 @@
+.Body {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80%;
+}
+.Home h1 {
+    font-size: 34px;
+    text-align: center;
+}
+.Home .ControllerBox {
+    display: flex;
+}
+.Home .ControllerBox button {
+    margin: 0 5px;
+}

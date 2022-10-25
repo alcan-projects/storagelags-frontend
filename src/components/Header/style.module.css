@@ -1,0 +1,11 @@
+.Header {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header nav {
+    padding: 1em;
+}
