@@ -1,0 +1,37 @@
+.title {
+    padding-top: 2em;
+}
+.List {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.List li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: rgb(29, 28, 28);
+    border-bottom: solid 1px rgb(47, 47, 47);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.List li div {
+    display: flex;
+    background-color: rgb(29, 28, 28);
+    width: 100%;
+}
+.List li div:last-child {
+    justify-content: end;
+}
+
+.List li:hover, .List li:hover div {
+    background-color: rgb(47, 47, 47);
+}
+
+
+.myGalleryBoxBtn {
+    display: flex;
+    justify-content: flex-end;
+    width: 69%;
+    padding: 1em 0;
+}

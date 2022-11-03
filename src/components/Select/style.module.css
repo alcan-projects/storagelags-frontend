@@ -1,0 +1,12 @@
+.Select {
+    padding: 10px;
+    border: solid 1px rgb(219, 217, 217);
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    background-color: #0000;
+}
+
+.Select option {
+    background-color: #1a1919;
+}

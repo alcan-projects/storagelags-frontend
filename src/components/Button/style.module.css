@@ -1,11 +1,37 @@
 .button {
-    background-color: #0000;
+    background-color: rgb(118, 26, 204);
     color: white;
-    padding: 8px 15px;
-    border: solid 1px #eee;
+    padding: 10px 18px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.buttonSelect::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    margin-left: 4px;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid blueviolet;
+}
+.buttonSelect::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    margin-left: 4px;
+    width: 0; 
+    height: 0; 
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 14px solid #121111;
 }
 .button:hover {
-    background-color: rgb(47, 47, 47);
+    background-color: blueviolet;
 }

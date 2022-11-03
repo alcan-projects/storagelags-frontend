@@ -1,0 +1,11 @@
+.filter {
+    width: 70%;
+    padding: 1em 0;
+    display: flex;
+}
+.filter input, .filter select {
+    margin-right: 10px;
+}
+.filter input {
+    width: 100%;
+}
