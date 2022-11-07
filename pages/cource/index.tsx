@@ -7,7 +7,7 @@ import BoxList from "../../src/components/BoxList";
 import SearchFilter from "../../src/components/SearchFilter";
 
 // styles
-import Utils from "../../src/styles/Utils.module.css";
+import Utils from "../../src/styles/Utils.module.scss";
 
 const Cources: NextPage = () => {
   const [langList, setLangList] = useState([]);

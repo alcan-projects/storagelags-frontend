@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  cssModules: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src/styles')]
+  }
 }
 
 module.exports = nextConfig

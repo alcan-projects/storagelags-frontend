@@ -8,8 +8,8 @@ import Input from "../../src/components/Input/indx";
 import Button from "../../src/components/Button";
 
 // styles
-import Utils from "../../src/styles/Utils.module.css";
-import styleLogin from "../../src/styles/Login.module.css";
+import Utils from "../../src/styles/Utils.module.scss";
+import styleLogin from "../../src/styles/Login.module.scss";
 
 const Login: NextPage = () => {
   const router = Router;

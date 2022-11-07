@@ -1,0 +1,29 @@
+.List {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    li {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+        background-color: rgb(29, 28, 28);
+        border-bottom: solid 1px rgb(47, 47, 47);
+        margin-bottom: 10px;
+        cursor: pointer;
+        &:hover, .List li:hover div {
+            background-color: rgb(47, 47, 47);
+        }
+
+        div {
+            display: flex;
+            background-color: rgb(29, 28, 28);
+            width: 100%;
+            &:last-child {
+                justify-content: end;
+            }
+        }
+    }
+}
+.boxFilter {
+    width: 100%;
+}

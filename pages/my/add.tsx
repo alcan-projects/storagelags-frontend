@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { api } from "../../src/utils/api";
 
 // styles
-import Utils from "../../src/styles/Utils.module.css";
+import Utils from "../../src/styles/Utils.module.scss";
 
 // types
 import Input from "../../src/components/Input/indx";

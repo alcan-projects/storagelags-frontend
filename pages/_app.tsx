@@ -6,8 +6,8 @@ import HeadSEO from "../src/components/Head";
 import Header from "../src/components/Header";
 
 // style
-import "../src/styles/globals.css";
-import style from "../src/styles/Body.module.css";
+import "../src/styles/globals.scss";
+import style from "../src/styles/Body.module.scss";
 import { useEffect, useState } from "react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {

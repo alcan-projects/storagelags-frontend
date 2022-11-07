@@ -11,8 +11,8 @@ import Button from "../../src/components/Button";
 import { ItemResponse } from "../../src/interfaces/item";
 
 // styles
-import Utils from "../../src/styles/Utils.module.css";
-import styleHome from "../../src/styles/Home.module.css";
+import Utils from "../../src/styles/Utils.module.scss";
+import styleHome from "../../src/styles/Home.module.scss";
 
 import BoxItem from "../../src/components/BoxItem";
 

@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { api } from "../../src/utils/api";
 
 // styles
-import Utils from "../../src/styles/Utils.module.css";
-import styleGalery from "../../src/styles/Gallery.module.css";
+import Utils from "../../src/styles/Utils.module.scss";
+import styleGalery from "../../src/styles/Gallery.module.scss";
 
 import { GalleryResponse } from "../../src/interfaces/gallery";
 import Button from "../../src/components/Button";

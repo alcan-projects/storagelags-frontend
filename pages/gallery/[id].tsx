@@ -9,8 +9,8 @@ import { ItemResponse } from "../../src/interfaces/item";
 import BoxItem from "../../src/components/BoxItem";
 
 // styles
-import style from "../../src/styles/Body.module.css";
-import Utils from "../../src/styles/Utils.module.css";
+import style from "../../src/styles/Body.module.scss";
+import Utils from "../../src/styles/Utils.module.scss";
 
 const GalerryId: NextPage = () => {
   const { query } = useRouter();
