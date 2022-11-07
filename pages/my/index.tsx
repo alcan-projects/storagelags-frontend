@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { api } from "../../src/utils/api";
 
 // styles
-import style from "../../src/styles/Body.module.css";
-import styleHome from "../../src/styles/Home.module.css";
+import Utils from "../../src/styles/Utils.module.css";
 
 // types
 import { GalleryResponse } from "../../src/interfaces/gallery";
@@ -14,7 +13,6 @@ import Button from "../../src/components/Button";
 
 const Home: NextPage = () => {
   const [data, setData] = useState<Array<GalleryResponse>>([]);
-  const db: Array<string> = ["Hello", "People", "Create"];
 
   useEffect(() => {
     const LS: any = localStorage.getItem("user");
@@ -25,8 +23,8 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <section className={styleHome.HomeIndex}>
-      <div className={style.BoxBtn}>
+    <section className={Utils.ContainerStart}>
+      <div className={Utils.BoxBtnEnd}>
         <Button
           link="/my/add"
           select={false}

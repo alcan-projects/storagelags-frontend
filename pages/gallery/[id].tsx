@@ -1,15 +1,16 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import BoxItem from "../../src/components/BoxItem";
+import { api } from "../../src/utils/api";
 
 // components
 import Button from "../../src/components/Button";
 import { ItemResponse } from "../../src/interfaces/item";
+import BoxItem from "../../src/components/BoxItem";
 
 // styles
 import style from "../../src/styles/Body.module.css";
-import { api } from "../../src/utils/api";
+import Utils from "../../src/styles/Utils.module.css";
 
 const GalerryId: NextPage = () => {
   const { query } = useRouter();
@@ -37,7 +38,7 @@ const GalerryId: NextPage = () => {
   }
 
   return (
-    <section className={style.Home}>
+    <section className={Utils.ContainerCenter}>
       {databaseSelect && (
         <BoxItem
           name={databaseSelect.name}

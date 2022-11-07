@@ -1,14 +1,13 @@
 import type { NextPage } from "next";
+import { useEffect, useState } from "react";
+import { api } from "../../src/utils/api";
 
 // components
 import BoxList from "../../src/components/BoxList";
+import SearchFilter from "../../src/components/SearchFilter";
 
 // styles
-import style from "../../src/styles/Body.module.css";
-import styleCource from "../../src/styles/Cource.module.css";
-import { useEffect, useState } from "react";
-import SearchFilter from "../../src/components/SearchFilter";
-import { api } from "../../src/utils/api";
+import Utils from "../../src/styles/Utils.module.css";
 
 const Cources: NextPage = () => {
   const [langList, setLangList] = useState([]);
@@ -35,9 +34,9 @@ const Cources: NextPage = () => {
     });
   }, []);
   return (
-    <section className={styleCource.Cource}>
-      <h1>Cursos</h1>
-      <div className={styleCource.boxFilter}>
+    <section className={Utils.ContainerStart}>
+      <h1 className={Utils.title}>Cursos</h1>
+      <div className={Utils.boxFilter}>
         <SearchFilter
           lang={lang}
           langList={langList}

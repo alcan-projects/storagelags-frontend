@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import { api } from "../../src/utils/api";
 
 // styles
-import styleHome from "../../src/styles/Home.module.css";
+import Utils from "../../src/styles/Utils.module.css";
 
 // types
-import { GalleryResponse } from "../../src/interfaces/gallery";
 import Input from "../../src/components/Input/indx";
 
 const Add: NextPage = () => {
@@ -18,7 +17,7 @@ const Add: NextPage = () => {
   }, []);
 
   return (
-    <section className={styleHome.HomeIndex}>
+    <section className={Utils.ContainerCenter}>
       <h1>Adicionar galeria</h1>
       <form action="">
         <Input

@@ -47,6 +47,7 @@ const BoxItem: NextPage<BoxItemType> = ({
     <>
       <div className={style.Text}>
         <h1>{name}</h1>
+        <br />
         <span onClick={toggleIsPlaying}>
           <audio src={audio} ref={audioRef} />
           {!isPlaying ? <AiOutlineAudio /> : <AiOutlineClose />}
@@ -57,6 +58,8 @@ const BoxItem: NextPage<BoxItemType> = ({
           </span>
         )}
       </div>
+      <br />
+      <br />
       <div className={style.informations}>
         {references && references.length > 0 && (
           <div

@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { api } from "../../src/utils/api";
 
 // styles
-import style from "../../src/styles/Body.module.css";
+import Utils from "../../src/styles/Utils.module.css";
 import styleGalery from "../../src/styles/Gallery.module.css";
-import { api } from "../../src/utils/api";
 
 import { GalleryResponse } from "../../src/interfaces/gallery";
 import Button from "../../src/components/Button";
@@ -46,11 +46,11 @@ const People: NextPage = () => {
   }, [lang, search]);
 
   return (
-    <section className={style.Home}>
+    <section className={Utils.ContainerCenter}>
       <h1>Galeria de idiomas</h1>
-      <div className={styleGalery.myGalleryBoxBtn}>
+      <div className={Utils.BoxBtnEnd}>
         <Button
-          link="/home"
+          link="/my"
           select={false}
           text="Criar minha galeria"
           type="button"

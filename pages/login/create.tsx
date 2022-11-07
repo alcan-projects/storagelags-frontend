@@ -7,7 +7,7 @@ import Select from "../../src/components/Select";
 import Button from "../../src/components/Button";
 
 // styles
-import style from "../../src/styles/Body.module.css";
+import Utils from "../../src/styles/Utils.module.css";
 import styleLogin from "../../src/styles/Login.module.css";
 
 const Login: NextPage = () => {
@@ -19,7 +19,7 @@ const Login: NextPage = () => {
   const [pass, setPass] = useState("");
 
   return (
-    <section className={style.Home}>
+    <section className={Utils.ContainerCenter}>
       <form className={styleLogin.Form}>
         <h1>Cadastro</h1>
         <Input

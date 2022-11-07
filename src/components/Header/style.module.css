@@ -7,7 +7,7 @@
 
 .Header .box {
     height: 100%;
-    padding: 0 1em;
+    padding: 0 1%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,13 +25,13 @@
 }
 
 .Header .box nav {
-    padding: 1em;
+    padding: 1em 0;
     background-color: rgb(18, 17, 17);
     display: flex;
 }
 
 .Header .box nav button {
-    margin: 0 5px;
+    margin-left: 10px;
 }
 
 

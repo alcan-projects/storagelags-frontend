@@ -6,13 +6,12 @@ import { api } from "../../src/utils/api";
 
 // components
 import Button from "../../src/components/Button";
-import HeadSEO from "../../src/components/Head";
-import Header from "../../src/components/Header";
 
 // types
 import { ItemResponse } from "../../src/interfaces/item";
 
 // styles
+import Utils from "../../src/styles/Utils.module.css";
 import styleHome from "../../src/styles/Home.module.css";
 
 import BoxItem from "../../src/components/BoxItem";
@@ -53,7 +52,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <section className={styleHome.Home}>
+    <section className={Utils.ContainerCenter}>
       {databaseSelect && (
         <BoxItem
           audio={databaseSelect.audio}

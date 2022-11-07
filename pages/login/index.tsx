@@ -1,15 +1,15 @@
 import type { NextPage } from "next";
 import Router from "next/router";
 import { useState } from "react";
-import Button from "../../src/components/Button";
+import { api } from "../../src/utils/api";
 
 // components
 import Input from "../../src/components/Input/indx";
+import Button from "../../src/components/Button";
 
 // styles
-import style from "../../src/styles/Body.module.css";
+import Utils from "../../src/styles/Utils.module.css";
 import styleLogin from "../../src/styles/Login.module.css";
-import { api } from "../../src/utils/api";
 
 const Login: NextPage = () => {
   const router = Router;
@@ -32,7 +32,7 @@ const Login: NextPage = () => {
       });
   }
   return (
-    <section className={style.Home}>
+    <section className={Utils.ContainerCenter}>
       <form className={styleLogin.Form} onSubmit={Login}>
         <h1>Login</h1>
         <Input placeholder="E-mail" onChange={setGmail} value={gmail} />

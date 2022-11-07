@@ -1,25 +1,7 @@
-/* Index */
-.HomeIndex {
-    height: 100%;
-    overflow-y: auto;
-}
-
 /* one */
-.Home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 80%;
-}
-.Home h1 {
-    font-size: 34px;
-    text-align: center;
-    padding: 1em 0;
-}
-.Home .ControllerBox {
+.ControllerBox {
     display: flex;
 }
-.Home .ControllerBox button {
+.ControllerBox button {
     margin: 0 5px;
 }
