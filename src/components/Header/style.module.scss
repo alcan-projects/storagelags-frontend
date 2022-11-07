@@ -1,0 +1,47 @@
+.Header {
+    height: 10vh;
+    width: 100%;
+    .box {
+        height: 100%;
+        padding: 0 1%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--bgSecund);
+        div {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            img {
+                height: 90%;
+            }
+        }
+        nav {
+            padding: 1em 0;
+            display: flex;
+            button {
+                margin-left: 10px;
+            }
+            
+        }
+    }
+    .peopleLogin {
+        display: flex;
+        padding-right: 10px;
+        position: relative;
+        justify-content: end;
+        span {
+            border-radius: 100%;
+            border: solid 2px var(--bgPrimary2);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                height: 50px !important;
+                width: 50px !important;
+                border-radius: 100%;
+            }
+        }
+    }
+}

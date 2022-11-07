@@ -5,7 +5,7 @@ import Input from "../Input/indx";
 import Select from "../Select";
 
 // style
-import style from "./style.module.css";
+import style from "./style.module.scss";
 
 type SearchFilterType = {
   setSearch: (value: string) => void;

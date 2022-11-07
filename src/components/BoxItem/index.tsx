@@ -11,7 +11,7 @@ import {
 import { IoReloadOutline } from "react-icons/io5";
 
 // style
-import style from "./style.module.css";
+import style from "./style.module.scss";
 
 // interfaces
 import { Comments, References } from "../../interfaces/item";

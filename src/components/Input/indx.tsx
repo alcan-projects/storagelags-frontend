@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import style from "./style.module.css";
+import style from "./style.module.scss";
 
 type InputType = {
   title?: string;

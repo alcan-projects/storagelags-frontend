@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import style from "./style.module.css";
+
+// style
+import style from "./style.module.scss";
 
 type ButtonType = {
   text: string;

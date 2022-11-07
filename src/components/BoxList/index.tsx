@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { SlOptionsVertical } from "react-icons/sl";
 
-import style from "./style.module.css";
+import style from "./style.module.scss";
 
 type BoxListType = {
   image: string;

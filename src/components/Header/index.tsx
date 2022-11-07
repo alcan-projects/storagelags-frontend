@@ -5,7 +5,7 @@ import { useState } from "react";
 import Button from "../Button";
 
 // styles
-import style from "./style.module.css";
+import style from "./style.module.scss";
 
 type HeaderType = {
   menu: number;

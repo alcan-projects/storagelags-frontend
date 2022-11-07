@@ -1,3 +1,11 @@
+:root {
+  --bgPrimary: #1a1919;
+  --bgSecund: #121111;
+  --bgOpaco: #0000
+  --bgPrimary2: blueviolet
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +14,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-  background-color: #1a1919;
+  background-color: var(--bgPrimary);
 }
 
 
