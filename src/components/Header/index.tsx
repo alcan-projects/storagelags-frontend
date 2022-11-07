@@ -32,7 +32,7 @@ const Header: NextPage<HeaderType> = ({ menu }) => {
             select={menu === 1 ? true : false}
             type="button"
             text="Minha galeria"
-            link="/home"
+            link="/my"
           />
           <Button
             select={menu === 2 ? true : false}

@@ -7,6 +7,12 @@
     overflow-y: auto;
 }
 
+.Body .BoxBtn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2em 1em;
+}
+
 .Home {
     display: flex;
     flex-direction: column;

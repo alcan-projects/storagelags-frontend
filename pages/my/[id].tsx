@@ -13,17 +13,8 @@ import Header from "../../src/components/Header";
 import { ItemResponse } from "../../src/interfaces/item";
 
 // styles
-import style from "../../src/styles/Body.module.css";
 import styleHome from "../../src/styles/Home.module.css";
 
-// icons
-import {
-  AiOutlineAudio,
-  AiOutlineClose,
-  AiOutlineMessage,
-} from "react-icons/ai";
-import { BiNews } from "react-icons/bi";
-import { IoReloadOutline } from "react-icons/io5";
 import BoxItem from "../../src/components/BoxItem";
 
 const Home: NextPage = () => {
@@ -62,37 +53,31 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div>
-      <HeadSEO text="StorageLangs" />
-      <Header menu={1} />
-      <article className={style.Body}>
-        <section className={styleHome.Home}>
-          {databaseSelect && (
-            <BoxItem
-              audio={databaseSelect.audio}
-              name={databaseSelect.name}
-              comments={databaseSelect.comments}
-              references={databaseSelect.references}
-            />
-          )}
-          <br />
-          <br />
-          <div className={styleHome.ControllerBox}>
-            <Button select={false} text="Adicionar" type="button" />
-            <Button
-              select={false}
-              onClick={() => {
-                databaseSelect && audioLoadStartPause();
-                setOptions(0);
-                reload();
-              }}
-              text={databaseSelect ? "Sortear" : "Iniciar"}
-              type="button"
-            />
-          </div>
-        </section>
-      </article>
-    </div>
+    <section className={styleHome.Home}>
+      {databaseSelect && (
+        <BoxItem
+          audio={databaseSelect.audio}
+          name={databaseSelect.name}
+          comments={databaseSelect.comments}
+          references={databaseSelect.references}
+        />
+      )}
+      <br />
+      <br />
+      <div className={styleHome.ControllerBox}>
+        <Button select={false} text="Adicionar" type="button" />
+        <Button
+          select={false}
+          onClick={() => {
+            databaseSelect && audioLoadStartPause();
+            setOptions(0);
+            reload();
+          }}
+          text={databaseSelect ? "Sortear" : "Iniciar"}
+          type="button"
+        />
+      </div>
+    </section>
   );
 };
 

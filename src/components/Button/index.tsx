@@ -6,8 +6,8 @@ type ButtonType = {
   text: string;
   onClick?: () => void;
   link?: string;
-  type: "button" | "submit" | "reset";
-  select: boolean;
+  type?: "button" | "submit" | "reset";
+  select?: boolean;
 };
 
 const Button: React.FC<ButtonType> = ({
@@ -15,7 +15,7 @@ const Button: React.FC<ButtonType> = ({
   onClick,
   link,
   type = "button",
-  select,
+  select = false,
 }) => {
   return (
     <>

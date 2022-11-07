@@ -5,8 +5,6 @@ import BoxItem from "../../src/components/BoxItem";
 
 // components
 import Button from "../../src/components/Button";
-import HeadSEO from "../../src/components/Head";
-import Header from "../../src/components/Header";
 import { ItemResponse } from "../../src/interfaces/item";
 
 // styles
@@ -39,32 +37,26 @@ const GalerryId: NextPage = () => {
   }
 
   return (
-    <div>
-      <HeadSEO text="StorageLangs" />
-      <Header menu={2} />
-      <article className={style.Body}>
-        <section className={style.Home}>
-          {databaseSelect && (
-            <BoxItem
-              name={databaseSelect.name}
-              audio={databaseSelect.audio}
-              comments={databaseSelect.comments}
-              references={databaseSelect.references}
-            />
-          )}
-          <br />
-          <br />
-          <div className={style.ControllerBox}>
-            <Button
-              type="button"
-              select={false}
-              onClick={reload}
-              text={databaseSelect ? "Sortear" : "Iniciar"}
-            />
-          </div>
-        </section>
-      </article>
-    </div>
+    <section className={style.Home}>
+      {databaseSelect && (
+        <BoxItem
+          name={databaseSelect.name}
+          audio={databaseSelect.audio}
+          comments={databaseSelect.comments}
+          references={databaseSelect.references}
+        />
+      )}
+      <br />
+      <br />
+      <div className={style.ControllerBox}>
+        <Button
+          type="button"
+          select={false}
+          onClick={reload}
+          text={databaseSelect ? "Sortear" : "Iniciar"}
+        />
+      </div>
+    </section>
   );
 };
 

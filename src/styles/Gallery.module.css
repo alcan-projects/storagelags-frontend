@@ -28,6 +28,9 @@
     background-color: rgb(47, 47, 47);
 }
 
+.boxFilter {
+    width: 70%;
+}
 
 .myGalleryBoxBtn {
     display: flex;
