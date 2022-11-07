@@ -14,22 +14,11 @@ import { TfiFaceSad } from "react-icons/tfi";
 
 const NotFauld: NextPage = () => {
   return (
-    <div>
-      <HeadSEO text="StorageLangs" />
-      <Header menu={4} />
-      <article className={style.Body}>
-        <section className={style.Home}>
-          <TfiFaceSad className={styleNotFound.icon} />
-          <h1>Página não encontrada</h1>
-          <Button
-            select={false}
-            text="Voltar para a home"
-            type="button"
-            link="/"
-          />
-        </section>
-      </article>
-    </div>
+    <section className={style.Home}>
+      <TfiFaceSad className={styleNotFound.icon} />
+      <h1>Página não encontrada</h1>
+      <Button select={false} text="Voltar para a home" type="button" link="/" />
+    </section>
   );
 };
 

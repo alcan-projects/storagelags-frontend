@@ -44,7 +44,7 @@ const Header: NextPage<HeaderType> = ({ menu }) => {
             select={menu === 3 ? true : false}
             type="button"
             text="Cursos"
-            link="/course"
+            link="/cource"
           />
           {!login && (
             <Button
