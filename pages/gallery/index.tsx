@@ -101,36 +101,6 @@ const People: NextPage = () => {
                 </li>
               </Link>
             ))}
-          {data &&
-            data.map((gallery, index) => (
-              <Link key={index} href={`/gallery/${gallery._id}`}>
-                <li>
-                  <div>{gallery.name}</div>
-                  <div>{gallery.user.name}</div>
-                  <div>{gallery.list?.length} items</div>
-                </li>
-              </Link>
-            ))}
-          {data &&
-            data.map((gallery, index) => (
-              <Link key={index} href={`/gallery/${gallery._id}`}>
-                <li>
-                  <div>{gallery.name}</div>
-                  <div>{gallery.user.name}</div>
-                  <div>{gallery.list?.length} items</div>
-                </li>
-              </Link>
-            ))}
-          {data &&
-            data.map((gallery, index) => (
-              <Link key={index} href={`/gallery/${gallery._id}`}>
-                <li>
-                  <div>{gallery.name}</div>
-                  <div>{gallery.user.name}</div>
-                  <div>{gallery.list?.length} items</div>
-                </li>
-              </Link>
-            ))}
         </ul>
       </section>
     </>
