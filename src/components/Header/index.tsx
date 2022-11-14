@@ -7,12 +7,24 @@ import Button from "../Button";
 // styles
 import style from "./style.module.scss";
 
+// icons
+import { HiLanguage } from "react-icons/hi2";
+import { AiOutlineClose } from "react-icons/ai";
+
 type HeaderType = {
   menu: number;
 };
 
+import langList from "../../lang/list.json";
+
 const Header: NextPage<HeaderType> = ({ menu }) => {
+  const [lang, setLang] = useState(false);
   const [login, setLogin] = useState(false);
+
+  const changeLang = () => {
+    setLang(!lang);
+  };
+
   return (
     <header className={style.Header}>
       <div className={style.box}>
@@ -27,12 +39,6 @@ const Header: NextPage<HeaderType> = ({ menu }) => {
             type="button"
             text="Home"
             link="/"
-          />
-          <Button
-            select={menu === 1 ? true : false}
-            type="button"
-            text="Minha galeria"
-            link="/my"
           />
           <Button
             select={menu === 2 ? true : false}
@@ -54,6 +60,19 @@ const Header: NextPage<HeaderType> = ({ menu }) => {
               link="/login"
             />
           )}
+          <div className={style.lang}>
+            <span onClick={changeLang}>
+              {lang ? <AiOutlineClose /> : <HiLanguage />}
+              PT-BR
+            </span>
+            {lang && (
+              <ul>
+                {langList.map((item, index) => (
+                  <li key={index}>{item.name}</li>
+                ))}
+              </ul>
+            )}
+          </div>
         </nav>
         {login && (
           <div className={style.peopleLogin}>

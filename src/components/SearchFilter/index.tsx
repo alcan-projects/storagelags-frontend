@@ -31,7 +31,7 @@ const SearchFilter: NextPage<SearchFilterType> = ({
         <Input
           onChange={setSearch}
           value={search}
-          placeholder="Pesquisar por pessoa ou nome"
+          placeholder="Pesquisar por nome"
           title="Pesquisar"
         />
         <Select

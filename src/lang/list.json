@@ -1,0 +1,12 @@
+[
+    {
+        "sigla": "PT-BR",
+        "file": "ptbr",
+        "name": "Português"
+    },
+    {
+        "sigla": "EN",
+        "file": "en",
+        "name": "English"
+    }
+]

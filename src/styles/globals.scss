@@ -1,6 +1,8 @@
 :root {
   --bgPrimary: #1a1919;
+  --bgPrimaryHover: #504f4f;
   --bgSecund: #121111;
+  --bgSecundHover: #353434;
   --bgOpaco: #0000
   --bgPrimary2: blueviolet
 }
@@ -15,11 +17,29 @@
 }
 body {
   background-color: var(--bgPrimary);
+  &::-webkit-scrollbar {
+    background-color: var(--bgPrimary);
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 8px;
+    background-color: var(--bgPrimaryHover);
+    border-radius: 10px;
+  }
 }
-
 
 a {
   text-decoration: none;
+}
+header {
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+article {
+  padding: 1em;
+  padding-top: 10vh;
 }
 
 input:focus {
@@ -28,7 +48,6 @@ input:focus {
 li {
   list-style-type: none;
 }
-
 
 h1 {
   font-size: 34px;

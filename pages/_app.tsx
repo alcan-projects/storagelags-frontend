@@ -7,7 +7,6 @@ import Header from "../src/components/Header";
 
 // style
 import "../src/styles/globals.scss";
-import style from "../src/styles/Body.module.scss";
 import { useEffect, useState } from "react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -26,7 +25,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <div>
       <HeadSEO text="StorageLangs" />
       <Header menu={page} />
-      <article className={style.Body}>
+      <article>
         <Component {...pageProps} />
       </article>
     </div>
