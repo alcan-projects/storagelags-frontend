@@ -23,7 +23,7 @@ const People: NextPage = () => {
     const LS: any = localStorage.getItem("user");
     const informationUser = JSON.parse(LS);
     api.get(`/gallery/user/${informationUser.userId}`).then((res) => {
-      setDataMy(res.data);
+      // setDataMy(res.data);
     });
   }, []);
 
@@ -62,13 +62,13 @@ const People: NextPage = () => {
         <div className={Utils.BoxBtnJustify}>
           <h2>Minhas galerias</h2>
           <Button
-            link="/my/add"
+            link="/gallery/add"
             select={false}
             text="Adicionar galeria"
             type="button"
           />
         </div>
-        {dataMy &&
+        {dataMy.length > 0 &&
           dataMy.map((item, index) => (
             <BoxList
               key={index}

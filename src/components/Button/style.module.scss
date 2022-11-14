@@ -9,8 +9,12 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     &:hover {
         background-color: blueviolet;
+    }
+    svg {
+        margin-right: 5px;
     }
 }
 .buttonSelect{

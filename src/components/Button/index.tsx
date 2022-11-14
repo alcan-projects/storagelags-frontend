@@ -5,7 +5,7 @@ import React from "react";
 import style from "./style.module.scss";
 
 type ButtonType = {
-  text: string;
+  text: any;
   onClick?: () => void;
   link?: string;
   type?: "button" | "submit" | "reset";

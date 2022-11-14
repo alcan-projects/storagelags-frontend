@@ -10,7 +10,7 @@
         border-bottom: solid 1px rgb(47, 47, 47);
         margin-bottom: 10px;
         cursor: pointer;
-        &:hover, .List li:hover div {
+        &:hover, &:hover div {
             background-color: rgb(47, 47, 47);
         }
 
@@ -24,6 +24,29 @@
         }
     }
 }
+
+// add
+.AddForm {
+    width: 60%;
+    margin-left: 20%;
+    .boxImageCapa {
+        ul{
+            li {
+                width: 20%;
+                transition: 0.3s;
+                img {
+                    cursor: pointer;
+                    width: 100%;
+                }
+                &:hover {
+                    transition: 0.3s;
+                    border: solid 1px var(--bgPrimaryHover);
+                }
+            }
+        }
+    }
+}
+
 .boxFilter {
     width: 100%;
 }
