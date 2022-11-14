@@ -15,7 +15,12 @@ import Select from "../../src/components/Select";
 import { BsFillPlayFill } from "react-icons/bs";
 import SearchFilter from "../../src/components/SearchFilter";
 import Button from "../../src/components/Button";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import {
+  AiOutlineArrowLeft,
+  AiOutlinePlus,
+  AiOutlineStar,
+} from "react-icons/ai";
+import PlayAudio from "../../src/components/PlayAudio";
 
 const Add: NextPage = () => {
   const [name, setName] = useState("");
@@ -36,6 +41,7 @@ const Add: NextPage = () => {
       <form action="" className={style.AddForm}>
         <div className={Utils.BoxBtnStart}>
           <Button
+            link="/gallery"
             text={
               <>
                 <AiOutlineArrowLeft />
@@ -78,17 +84,45 @@ const Add: NextPage = () => {
           </ul>
         </div>
         <div>
-          <ul>
+          <div className={Utils.BoxBtnEnd}>
+            <Button
+              text={
+                <>
+                  <AiOutlinePlus />
+                  Adicionar item
+                </>
+              }
+            />
+          </div>
+          <br />
+          <ul className={style.List}>
             <li>
-              <p>Prodution</p>
+              <div>Prodution</div>
               <div>
-                <span>
-                  <BsFillPlayFill />
-                </span>
-                <span></span>
-                <span></span>
-                <audio src=""></audio>
+                <Button
+                  text={
+                    <>
+                      <AiOutlineStar />
+                      Impulsionar
+                    </>
+                  }
+                />
               </div>
+              <PlayAudio progress={70} />
+            </li>
+            <li>
+              <div>Prodution</div>
+              <div>
+                <Button
+                  text={
+                    <>
+                      <AiOutlineStar />
+                      Impulsionar
+                    </>
+                  }
+                />
+              </div>
+              <PlayAudio progress={70} />
             </li>
           </ul>
         </div>

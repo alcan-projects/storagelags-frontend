@@ -18,6 +18,7 @@
             display: flex;
             background-color: rgb(29, 28, 28);
             width: 100%;
+            align-items: center;
             &:last-child {
                 justify-content: end;
             }
