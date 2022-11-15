@@ -23,7 +23,7 @@ const People: NextPage = () => {
     const LS: any = localStorage.getItem("user");
     const informationUser = JSON.parse(LS);
     api.get(`/gallery/user/${informationUser.userId}`).then((res) => {
-      // setDataMy(res.data);
+      setDataMy(res.data);
     });
   }, []);
 

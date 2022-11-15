@@ -1,0 +1,31 @@
+.Modal {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.284);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    section {
+        width: 35%;
+        background-color: var(--Modal);
+        border-radius: 10px;
+        padding: 1em;
+        position: absolute;
+        z-index: 2;
+        div, input, select, p, h1, h2, h3, h4, h5, h6 {
+            color: var(--ModalColor);
+        }
+    }
+    .closed {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}

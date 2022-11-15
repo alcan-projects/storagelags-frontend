@@ -41,20 +41,20 @@ const Header: NextPage<HeaderType> = ({ menu }) => {
             link="/"
           />
           <Button
-            select={menu === 2 ? true : false}
+            select={menu === 1 ? true : false}
             type="button"
             text="Galerias"
             link="/gallery"
           />
           <Button
-            select={menu === 3 ? true : false}
+            select={menu === 2 ? true : false}
             type="button"
             text="Cursos"
             link="/cource"
           />
           {!login && (
             <Button
-              select={menu === 4 ? true : false}
+              select={menu === 3 ? true : false}
               type="button"
               text="Fazer login"
               link="/login"

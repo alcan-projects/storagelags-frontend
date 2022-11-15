@@ -15,10 +15,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     pathname === "/" && setPage(0);
-    pathname === "/my" && setPage(1);
-    pathname === "/gallery" && setPage(2);
-    pathname === "/cource" && setPage(3);
-    pathname === "/login" && setPage(4);
+    pathname === "/gallery" && setPage(1);
+    pathname === "/cource" && setPage(2);
+    pathname === "/login" && setPage(3);
   }, [pathname]);
 
   return (
