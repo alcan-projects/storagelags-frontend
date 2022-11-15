@@ -32,6 +32,9 @@
     margin-left: 20%;
     
     .inputsGalerry {
+        span {
+            display: flex;
+        }
         input, select {
             width: 100%;
             margin-bottom: 1em;

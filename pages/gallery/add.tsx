@@ -29,6 +29,7 @@ import Input from "../../src/components/Input/indx";
 import Select from "../../src/components/Select";
 import AudioGravar from "../../src/components/Audio/Gravar";
 import AudioPlay from "../../src/components/Audio/Play";
+import Information from "../../src/components/Information/Index";
 
 const Add: NextPage = () => {
   const [pupUpAdd, setPupUpAdd] = useState(false);
@@ -65,7 +66,14 @@ const Add: NextPage = () => {
         </div>
         <br />
         <div className={style.inputsGalerry}>
-          <span>Nome:</span>
+          <span>
+            Nome:
+            <Information
+              content="/content/name-gallery.png"
+              title="Nome da galeria"
+              type="image"
+            />
+          </span>
           <Input
             placeholder="Nome da galeria"
             name="name"

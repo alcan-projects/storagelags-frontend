@@ -4,7 +4,7 @@ import style from "./style.module.scss";
 
 const AudioPlay = () => {
   return (
-    <div className={style.audio}>
+    <div className={style.audioPlay}>
       <div>
         <BsFillPlayFill />
       </div>

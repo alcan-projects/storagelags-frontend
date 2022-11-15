@@ -1,4 +1,4 @@
-.audio {
+.audioPlay {
     display: flex;
     align-items: center;
     width: 70%;
@@ -29,6 +29,45 @@
         }
     }
     div:nth-child(3) {
+        svg {
+            fill: red
+        }
+    }
+}
+
+.audioGravar {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    .box {
+        display: flex;
+        align-items: center;
+        padding: 15px 10px;
+        border: solid 2px #ddd;
+        
+        border-radius: 5px;
+        div:nth-child(1), div:nth-child(2), div:nth-child(3) {
+            padding: 0 10px;
+            cursor: pointer;
+            margin-right: 5px;
+            display: flex;
+            align-items: center;
+            svg, span {
+                fill: var(--modalColor);
+                color: var(--modalColor)
+            }
+        }
+        div:nth-child(3) {
+            svg {
+                fill: red;
+            }
+        }
+    }
+    .trash {
+        padding: 0 15px;
+        cursor: pointer;
+        margin-right: 5px;
         svg {
             fill: red
         }
