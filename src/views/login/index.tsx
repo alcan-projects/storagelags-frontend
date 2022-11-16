@@ -1,7 +1,4 @@
 import type { NextPage } from "next";
-import Router from "next/router";
-import { useState } from "react";
-import { api } from "../../utils/api";
 
 // components
 import Input from "../../components/Input/indx";
@@ -11,32 +8,31 @@ import Button from "../../components/Button";
 import Utils from "../../styles/Utils.module.scss";
 import styleLogin from "./Login.module.scss";
 
-const Login: NextPage = () => {
-  const router = Router;
-  const [gmail, setGmail] = useState("");
-  const [password, setPassword] = useState("");
-  function Login(e: any) {
-    e.preventDefault();
-    const data = {
-      gmail,
-      password,
-    };
-    api
-      .post("/login", data)
-      .then((res) => {
-        localStorage.setItem("user", JSON.stringify(res.data));
-        router.push("/home");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+type LoginType = {
+  inputs: {
+    gmail: string;
+    setGmail: (value: string) => void;
+    password: string;
+    setPassword: (value: string) => void;
+  };
+  LoginSubmit: (e: any) => void;
+};
+
+const Login: NextPage<LoginType> = ({ inputs, LoginSubmit }) => {
   return (
     <section className={Utils.ContainerCenter}>
-      <form className={styleLogin.Form} onSubmit={Login}>
+      <form className={styleLogin.Form} onSubmit={LoginSubmit}>
         <h1>Login</h1>
-        <Input placeholder="E-mail" onChange={setGmail} value={gmail} />
-        <Input placeholder="Senha" onChange={setPassword} value={password} />
+        <Input
+          placeholder="E-mail"
+          onChange={inputs.setGmail}
+          value={inputs.gmail}
+        />
+        <Input
+          placeholder="Senha"
+          onChange={inputs.setPassword}
+          value={inputs.password}
+        />
         <div>
           <label htmlFor="passView">
             <input type="checkbox" id="passView" /> Mostrar senha

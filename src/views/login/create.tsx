@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { useState } from "react";
 
 // components
 import Input from "../../components/Input/indx";
@@ -10,43 +9,55 @@ import Button from "../../components/Button";
 import Utils from "../../styles/Utils.module.scss";
 import styleLogin from "./Login.module.scss";
 
-const CreateLogin: NextPage = () => {
-  const [passwordView, setPasswordView] = useState(false);
+type CreateLoginType = {
+  passwordView: boolean;
+  setPasswordView: (value: boolean) => void;
+  inputs: {
+    name: string;
+    setName: (value: string) => void;
+    lang: string;
+    setLang: (value: string) => void;
+    email: string;
+    setEmail: (value: string) => void;
+    pass: string;
+    setPass: (value: string) => void;
+  };
+};
 
-  const [name, setName] = useState("");
-  const [lang, setLang] = useState("");
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-
+const CreateLogin: NextPage<CreateLoginType> = ({
+  passwordView,
+  setPasswordView,
+  inputs,
+}) => {
   return (
     <section className={Utils.ContainerCenter}>
       <form className={styleLogin.Form}>
         <h1>Cadastro</h1>
         <Input
-          value={name}
-          onChange={setName}
+          value={inputs.name}
+          onChange={inputs.setName}
           placeholder="Nome"
           name="name"
           title="Nome do usuário"
         />
         <Select
-          value={lang}
-          onChange={setLang}
+          value={inputs.lang}
+          onChange={inputs.setLang}
           placeholder="Idioma nativo"
           name="native_language"
           title="Seleção da lingua nativa do usuário"
         />
         <Input
-          value={email}
-          onChange={setEmail}
+          value={inputs.email}
+          onChange={inputs.setEmail}
           placeholder="E-mail"
           name="email"
           type="email"
           title="E-mail do usuário"
         />
         <Input
-          value={pass}
-          onChange={setPass}
+          value={inputs.pass}
+          onChange={inputs.setPass}
           placeholder="Senha"
           name="password"
           title="Senha do usuário"
