@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import { api } from "../../../utils/api";
 
 // styles
 import Utils from "../../../styles/Utils.module.scss";
@@ -20,43 +18,43 @@ import Information from "../../../components/Information/Index";
 import { ItemScore } from "../../../interfaces/item";
 import GalleryAddModal from "./modules/ModalAdd";
 import ListItem from "./modules/ListItens";
+import { LangListScore } from "../../../interfaces/LangList";
 
-const GalleryAdd: NextPage = () => {
-  const [pupUpAdd, setPupUpAdd] = useState(false);
-  const [langList, setLangList] = useState([]);
+type GalleryAddType = {
+  pupUpAdd: boolean;
+  setPupUpAdd: (value: boolean) => void;
+  langList: Array<LangListScore>;
+  setLangList: (value: Array<LangListScore>) => void;
 
-  const [lang, setLang] = useState("");
-  const [name, setName] = useState("");
-  const [image, setImage] = useState("");
-  const [itens, setItens] = useState<Array<ItemScore>>([]);
+  functions: {
+    ChangePupUp: () => void;
+    FormSubmit: (e: any) => void;
+  };
 
-  useEffect(() => {
-    api.get("/lang").then((res) => {
-      setLangList(
-        res.data.map((item: string) => ({ value: item, text: item }))
-      );
-    });
-  }, []);
+  inputs: {
+    lang: string;
+    setLang: (value: string) => void;
+    name: string;
+    setName: (value: string) => void;
+    image: string;
+    setImage: (value: string) => void;
+    itens: Array<ItemScore>;
+    setItens: (value: Array<ItemScore>) => void;
+  };
+};
 
-  function ChangePupUp() {
-    setPupUpAdd(!pupUpAdd);
-  }
-
-  function FormSubmit(e: any) {
-    e.preventDefault();
-    const data = {
-      name,
-      lang,
-      image,
-    };
-
-    console.log(data);
-  }
-
+const GalleryAdd: NextPage<GalleryAddType> = ({
+  inputs,
+  functions,
+  langList,
+  pupUpAdd,
+  setLangList,
+  setPupUpAdd,
+}) => {
   return (
     <section className={Utils.ContainerCenter}>
       <h1 className={Utils.title}>Adicionar galeria</h1>
-      <form onSubmit={FormSubmit} className={style.AddForm}>
+      <form onSubmit={functions.FormSubmit} className={style.AddForm}>
         <div className={Utils.BoxBtnStart}>
           <Button
             link="/gallery"
@@ -82,15 +80,15 @@ const GalleryAdd: NextPage = () => {
             placeholder="Nome da galeria"
             name="galleryName"
             title="Nome da galeria"
-            onChange={setName}
-            value={name}
+            onChange={inputs.setName}
+            value={inputs.name}
           />
           <span>Idioma:</span>
           <Select
             placeholder="Selecionar idioma"
             options={langList}
-            value={lang}
-            onChange={setLang}
+            value={inputs.lang}
+            onChange={inputs.setLang}
             name="language"
             title="Selecionar idioma"
           />
@@ -100,8 +98,8 @@ const GalleryAdd: NextPage = () => {
               placeholder="Pesquisar papel de parede"
               name="wallpaper"
               title="Papel de parede"
-              onChange={setImage}
-              value={image}
+              onChange={inputs.setImage}
+              value={inputs.image}
             />
             <ul>
               <li>
@@ -119,7 +117,7 @@ const GalleryAdd: NextPage = () => {
             <span>Itens:</span>
             <div className={Utils.BoxBtnEnd}>
               <Button
-                onClick={ChangePupUp}
+                onClick={functions.ChangePupUp}
                 text={
                   <>
                     <AiOutlinePlus />
@@ -131,8 +129,10 @@ const GalleryAdd: NextPage = () => {
           </div>
           <br />
           <ul className={`${style.List} ${style.listItem}`}>
-            {itens &&
-              itens.map((item, index) => <ListItem key={index} item={item} />)}
+            {inputs.itens &&
+              inputs.itens.map((item, index) => (
+                <ListItem key={index} item={item} />
+              ))}
           </ul>
         </div>
         <br />
@@ -141,7 +141,7 @@ const GalleryAdd: NextPage = () => {
           <Button text="Cancelar" type="button" />
           <Button text="Salvar" type="submit" />
         </div>
-        {pupUpAdd && <GalleryAddModal ChangePupUp={ChangePupUp} />}
+        {pupUpAdd && <GalleryAddModal ChangePupUp={functions.ChangePupUp} />}
       </form>
     </section>
   );
