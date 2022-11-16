@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { api } from "../../utils/api";
 
 // styles
 import Utils from "../../styles/Utils.module.scss";
@@ -15,14 +13,16 @@ import BoxList from "../../components/BoxList";
 import { LangListScore } from "../../interfaces/LangList";
 
 type GalleryType = {
+  inputs: {
+    search: string;
+    setSearch: (value: string) => void;
+    lang: string;
+    setLang: (value: string) => void;
+  };
   dataMy: Array<GalleryResponse>;
   setDataMy: (value: Array<GalleryResponse>) => void;
   langList: Array<LangListScore>;
   setLangList: (value: Array<LangListScore>) => void;
-  search: string;
-  setSearch: (value: string) => void;
-  lang: string;
-  setLang: (value: string) => void;
   data: Array<GalleryResponse>;
   setData: (value: Array<GalleryResponse>) => void;
 };
@@ -34,10 +34,7 @@ const Gallery: NextPage<GalleryType> = ({
   setLangList,
   data,
   setData,
-  lang,
-  setLang,
-  search,
-  setSearch,
+  inputs,
 }) => {
   return (
     <>
@@ -66,11 +63,11 @@ const Gallery: NextPage<GalleryType> = ({
         <h2>Todas as galerias</h2>
         <div className={styleGalery.boxFilter}>
           <SearchFilter
-            lang={lang}
+            lang={inputs.lang}
             langList={langList}
-            search={search}
-            setLang={setLang}
-            setSearch={setSearch}
+            search={inputs.search}
+            setLang={inputs.setLang}
+            setSearch={inputs.setSearch}
           />
         </div>
         <ul className={styleGalery.List}>

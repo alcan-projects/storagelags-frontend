@@ -10,9 +10,10 @@ import { GalleryResponse } from "../../src/interfaces/gallery";
 import { LangListScore } from "../../src/interfaces/LangList";
 
 const GalleryPage: NextPage = () => {
-  const [langList, setLangList] = useState<Array<LangListScore>>([]);
   const [search, setSearch] = useState("");
   const [lang, setLang] = useState("");
+
+  const [langList, setLangList] = useState<Array<LangListScore>>([]);
   const [data, setData] = useState<Array<GalleryResponse>>([]);
   const [dataMy, setDataMy] = useState<Array<GalleryResponse>>([]);
 
@@ -57,16 +58,18 @@ const GalleryPage: NextPage = () => {
 
   return (
     <Gallery
+      inputs={{
+        setLang, // [states] Adicionar idioma no filtro da pesquisa
+        lang, // Idioma selecionado no filtro da pesquisa
+        setSearch, // [states] Adicionar texto da pesquisa
+        search, // Texto da pesquisa
+      }}
       dataMy={dataMy} // todas as galerias do usuário
       setDataMy={setDataMy} // Adiciona todas as galerias do usuário
       langList={langList} // Todos os idiomas já formatados
       setLangList={setLangList} // [states] Adiciona todos os idiomas já formatados
       setData={setData} // [states] Adicionar todos as gallerias
       data={data} // Todas as galerias
-      setLang={setLang} // [states] Adicionar idioma no filtro da pesquisa
-      lang={lang} // Idioma selecionado no filtro da pesquisa
-      setSearch={setSearch} // [states] Adicionar texto da pesquisa
-      search={search} // Texto da pesquisa
     />
   );
 };
