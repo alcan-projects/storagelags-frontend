@@ -8,31 +8,30 @@ import SearchFilter from "../../components/SearchFilter";
 
 // styles
 import Utils from "../../styles/Utils.module.scss";
+import { LangListScore } from "../../interfaces/LangList";
 
-const Cources: NextPage = () => {
-  const [langList, setLangList] = useState([]);
-  const [search, setSearch] = useState("");
-  const [lang, setLang] = useState("");
+import { CourceResponse } from "../../interfaces/cource";
+type CourcesType = {
+  langList: Array<LangListScore>;
+  setLangList: (value: Array<LangListScore>) => void;
+  search: string;
+  setSearch: (value: string) => void;
+  lang: string;
+  setLang: (value: string) => void;
+  data: Array<CourceResponse>;
+  setData: (value: Array<CourceResponse>) => void;
+};
 
-  const [data, setData] = useState([
-    {
-      _id: "23423423c4f234f324",
-      name: "Curso de inglês",
-      image:
-        "https://certificadocursosonline.com/wp-content/uploads/2017/09/curso-de-ingles-online-gratis-1280x720.jpg",
-    },
-  ]);
-
-  useEffect(() => {
-    api.get("/lang").then((res) => {
-      setLangList(
-        res.data.map((item: string) => ({
-          value: item,
-          text: item,
-        }))
-      );
-    });
-  }, []);
+const Cources: NextPage<CourcesType> = ({
+  data,
+  lang,
+  langList,
+  search,
+  setData,
+  setLang,
+  setLangList,
+  setSearch,
+}) => {
   return (
     <section className={Utils.ContainerStart}>
       <h1 className={Utils.title}>Cursos</h1>

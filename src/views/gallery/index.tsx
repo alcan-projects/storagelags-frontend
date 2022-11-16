@@ -7,55 +7,38 @@ import { api } from "../../utils/api";
 import Utils from "../../styles/Utils.module.scss";
 import styleGalery from "./index.module.scss";
 
+// components
 import { GalleryResponse } from "../../interfaces/gallery";
 import Button from "../../components/Button";
 import SearchFilter from "../../components/SearchFilter";
 import BoxList from "../../components/BoxList";
+import { LangListScore } from "../../interfaces/LangList";
 
-const Gallery: NextPage = () => {
-  const [langList, setLangList] = useState([]);
-  const [search, setSearch] = useState("");
-  const [lang, setLang] = useState("");
-  const [data, setData] = useState<Array<GalleryResponse>>([]);
-  const [dataMy, setDataMy] = useState<Array<GalleryResponse>>([]);
+type GalleryType = {
+  dataMy: Array<GalleryResponse>;
+  setDataMy: (value: Array<GalleryResponse>) => void;
+  langList: Array<LangListScore>;
+  setLangList: (value: Array<LangListScore>) => void;
+  search: string;
+  setSearch: (value: string) => void;
+  lang: string;
+  setLang: (value: string) => void;
+  data: Array<GalleryResponse>;
+  setData: (value: Array<GalleryResponse>) => void;
+};
 
-  useEffect(() => {
-    const LS: any = localStorage.getItem("user");
-    const informationUser = JSON.parse(LS);
-    api.get(`/gallery/user/${informationUser.userId}`).then((res) => {
-      setDataMy(res.data);
-    });
-  }, []);
-
-  useEffect(() => {
-    api.get("/lang").then((res) => {
-      setLangList(
-        res.data.map((item: string) => ({
-          value: item,
-          text: item,
-        }))
-      );
-    });
-
-    if (search.length || lang) {
-      if (lang.length) {
-        api
-          .get(`/gallery/search/in?name=${search}&lang=${lang}`)
-          .then((res) => {
-            setData(res.data);
-          });
-      } else {
-        api.get(`/gallery/search/in?name=${search}&lang=all`).then((res) => {
-          setData(res.data);
-        });
-      }
-    } else {
-      api.get("/gallery").then((res) => {
-        setData(res.data);
-      });
-    }
-  }, [lang, search]);
-
+const Gallery: NextPage<GalleryType> = ({
+  dataMy,
+  setDataMy,
+  langList,
+  setLangList,
+  data,
+  setData,
+  lang,
+  setLang,
+  search,
+  setSearch,
+}) => {
   return (
     <>
       <section className={Utils.ContainerStart}>
