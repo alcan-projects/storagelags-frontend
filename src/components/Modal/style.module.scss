@@ -11,11 +11,21 @@
     align-items: center;
     section {
         width: 35%;
+        max-height: 90vh;
         background-color: var(--Modal);
         border-radius: 10px;
         padding: 1em;
         position: absolute;
         z-index: 2;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            background-color: var(--bgPrimary);
+        }
+        &::-webkit-scrollbar-thumb {
+            width: 8px;
+            background-color: var(--bgPrimaryHover);
+            border-radius: 10px;
+        }
         div, input, select, p, h1, h2, h3, h4, h5, h6 {
             color: var(--ModalColor);
         }

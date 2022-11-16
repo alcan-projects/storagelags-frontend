@@ -1,20 +1,10 @@
 import type { NextPage } from "next";
-import Button from "../src/components/Button";
 
-// styles
-import styleNotFound from "../src/styles/NotFound.module.scss";
+// view
+import NotFauld from "../src/views/notFound";
 
-// icons
-import { TfiFaceSad } from "react-icons/tfi";
-
-const NotFauld: NextPage = () => {
-  return (
-    <section>
-      <TfiFaceSad className={styleNotFound.icon} />
-      <h1>Página não encontrada</h1>
-      <Button select={false} text="Voltar para a home" type="button" link="/" />
-    </section>
-  );
+const NotFauldPage: NextPage = () => {
+  return <NotFauld />;
 };
 
-export default NotFauld;
+export default NotFauldPage;

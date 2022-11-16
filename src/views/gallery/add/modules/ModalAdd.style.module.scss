@@ -1,0 +1,50 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    h1 {
+        text-align: center;
+        padding: 20px 0;
+    }
+    .boxOptions {
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+        input {
+            margin: 0 10px;
+        }
+        p {
+            color: var(--modalColor);
+            margin: 10px;
+        }
+        ul {
+            display: flex;
+            li {
+                width: 100%;
+                cursor: pointer;
+                div {
+                    margin: 0 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1em 0;
+                    border: solid 2px var(--bgPrimary2);
+                    border-radius: 10px;
+                    &:hover {
+                        background-color: var(--bgPrimaryCleanHover);
+                    }
+                    p, svg {
+                        color: var(--modalColor);
+                        fill: var(--modalColor);
+                    }
+                    svg {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .marginButtonPupUp button {
+        margin: 0 5px;
+    }
+}

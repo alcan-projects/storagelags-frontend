@@ -1,0 +1,49 @@
+// add
+.AddForm {
+    width: 60%;
+    margin-left: 20%;
+    
+    .inputsGalerry {
+        span {
+            display: flex;
+        }
+        input, select {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+    }
+    .boxImageCapa {
+        ul{
+            li {
+                width: 20%;
+                transition: 0.3s;
+                img {
+                    cursor: pointer;
+                    width: 100%;
+                }
+                &:hover {
+                    transition: 0.3s;
+                    border: solid 1px var(--bgPrimaryHover);
+                }
+            }
+        }
+    }
+    .boxItem {
+        background-color: var(--bgSecund);
+        margin-top: 4em;
+        padding: 1em;
+        .listItem {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 3px;
+            &::-webkit-scrollbar {
+                background-color: var(--bgPrimary);
+            }
+            &::-webkit-scrollbar-thumb {
+                width: 4px;
+                background-color: var(--bgPrimaryHover);
+                border-radius: 10px;
+            }
+        }
+    }
+}

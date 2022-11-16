@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
-import GalleryView from "../../src/views/gallery/view";
 
 const Home: NextPage = () => {
-  return <GalleryView />;
+  return <section>home</section>;
 };
 
 export default Home;

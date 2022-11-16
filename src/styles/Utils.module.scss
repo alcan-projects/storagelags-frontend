@@ -10,6 +10,11 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    button{
+        &:nth-child(2){
+            margin-left: 10px;
+        }
+    }
 }
 .BoxBtnJustify {
     width: 100%;

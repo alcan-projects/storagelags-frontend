@@ -25,6 +25,7 @@ const Input: NextPage<InputType> = ({
       className={style.Input}
       type={type}
       placeholder={placeholder}
+      value={value}
       onChange={(e) => onChange(e.target.value)}
     />
   );

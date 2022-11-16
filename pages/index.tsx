@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
+import Home from "../src/views/home";
 
 const Index: NextPage = () => {
-  return <section></section>;
+  return <Home />;
 };
 
 export default Index;
