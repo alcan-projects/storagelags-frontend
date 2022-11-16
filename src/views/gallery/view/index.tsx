@@ -1,8 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/router";
-import { api } from "../../../utils/api";
 
 // components
 import Button from "../../../components/Button";
@@ -16,41 +13,26 @@ import style from "./view.module.scss";
 
 import BoxItem from "../../../components/BoxItem";
 
-const GalleryView: NextPage = () => {
-  const audioRef: any = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+type GalleryViewType = {
+  functions: {
+    reload: () => void;
+    audioLoadStartPause: () => void;
+  };
+  databaseSelect?: ItemResponse;
+  setDatabaseSelect: (value: ItemResponse) => void;
+  database: Array<ItemResponse>;
+  setDatabase: (value: Array<ItemResponse>) => void;
+  setOptions: (value: number) => void;
+};
 
-  const { query } = useRouter();
-  const [options, setOptions] = useState(0);
-  const [databaseSelect, setDatabaseSelect] = useState<ItemResponse>();
-  const [database, setDatabase] = useState<Array<ItemResponse>>([]);
-
-  useEffect(() => {
-    api.get(`/item/gallery/${query.id}`).then((res) => {
-      setDatabase(res.data);
-    });
-  }, [query.id]);
-
-  function reload() {
-    if (database.length > 0) {
-      const numberDrawn = Math.floor(Math.random() * database.length);
-      const nomeOld = database[numberDrawn];
-      if (nomeOld === databaseSelect) {
-        reload();
-      } else {
-        setDatabaseSelect(nomeOld);
-      }
-    } else {
-      alert("Não tem nada adicionado no banco de dados ainda");
-    }
-  }
-
-  function audioLoadStartPause() {
-    audioRef.current?.load();
-    audioRef.current?.pause();
-    setIsPlaying(false);
-  }
-
+const GalleryView: NextPage<GalleryViewType> = ({
+  functions,
+  databaseSelect,
+  setDatabaseSelect,
+  database,
+  setDatabase,
+  setOptions,
+}) => {
   return (
     <section className={Utils.ContainerCenter}>
       {databaseSelect && (
@@ -68,9 +50,9 @@ const GalleryView: NextPage = () => {
         <Button
           select={false}
           onClick={() => {
-            databaseSelect && audioLoadStartPause();
+            databaseSelect && functions.audioLoadStartPause();
             setOptions(0);
-            reload();
+            functions.reload();
           }}
           text={databaseSelect ? "Sortear" : "Iniciar"}
           type="button"
