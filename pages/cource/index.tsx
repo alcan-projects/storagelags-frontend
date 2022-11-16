@@ -10,10 +10,11 @@ import { CourceResponse } from "../../src/interfaces/cource";
 import { LangListScore } from "../../src/interfaces/LangList";
 
 const CourcesPage: NextPage = () => {
-  const [langList, setLangList] = useState<Array<LangListScore>>([]);
+  // inputs
   const [search, setSearch] = useState<string>("");
   const [lang, setLang] = useState<string>("");
 
+  const [langList, setLangList] = useState<Array<LangListScore>>([]);
   const [data, setData] = useState<Array<CourceResponse>>([
     {
       _id: "23423423c4f234f324",
