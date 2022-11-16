@@ -41,14 +41,16 @@ const CourcesPage: NextPage = () => {
   }, []);
   return (
     <Cources
+      inputs={{
+        lang,
+        setLang,
+        setSearch,
+        search,
+      }}
       data={data}
-      lang={lang}
       langList={langList}
-      search={search}
       setData={setData}
-      setLang={setLang}
       setLangList={setLangList}
-      setSearch={setSearch}
     />
   );
 };

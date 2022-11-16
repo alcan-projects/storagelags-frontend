@@ -12,36 +12,35 @@ import { LangListScore } from "../../interfaces/LangList";
 
 import { CourceResponse } from "../../interfaces/cource";
 type CourcesType = {
+  inputs: {
+    search: string;
+    setSearch: (value: string) => void;
+    lang: string;
+    setLang: (value: string) => void;
+  };
   langList: Array<LangListScore>;
   setLangList: (value: Array<LangListScore>) => void;
-  search: string;
-  setSearch: (value: string) => void;
-  lang: string;
-  setLang: (value: string) => void;
   data: Array<CourceResponse>;
   setData: (value: Array<CourceResponse>) => void;
 };
 
 const Cources: NextPage<CourcesType> = ({
   data,
-  lang,
+  inputs,
   langList,
-  search,
   setData,
-  setLang,
   setLangList,
-  setSearch,
 }) => {
   return (
     <section className={Utils.ContainerStart}>
       <h1 className={Utils.title}>Cursos</h1>
       <div className={Utils.boxFilter}>
         <SearchFilter
-          lang={lang}
+          lang={inputs.lang}
           langList={langList}
-          search={search}
-          setLang={setLang}
-          setSearch={setSearch}
+          search={inputs.search}
+          setLang={inputs.setLang}
+          setSearch={inputs.setSearch}
         />
       </div>
       {data &&
