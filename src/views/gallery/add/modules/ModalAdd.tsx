@@ -22,6 +22,7 @@ import Button from "../../../../components/Button";
 import style from "./ModalAdd.style.module.scss";
 import Utils from "../../../../styles/Utils.module.scss";
 import { ReferencesScore } from "../../../../interfaces/item";
+import { apiFile } from "../../../../utils/api";
 
 type GalleryAddModalType = {
   ChangePupUp: () => void;
@@ -31,6 +32,28 @@ const GalleryAddModal: NextPage<GalleryAddModalType> = ({ ChangePupUp }) => {
   const [name, setName] = useState("");
   const [audio, setAudio] = useState("");
   const [references, setReferences] = useState<Array<ReferencesScore>>([]);
+
+  function uploadFileAudio(e: any) {
+    apiFile
+      .post("/upload/image", { file: e.target.files[0] })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  function uploadFileImage(e: any) {
+    apiFile
+      .post("/upload/image", { file: e.target.files[0] })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   return (
     <Modal
@@ -66,10 +89,16 @@ const GalleryAddModal: NextPage<GalleryAddModalType> = ({ ChangePupUp }) => {
                 </div>
               </li>
               <li>
-                <div>
+                <label htmlFor="uploadAudio">
                   <AiOutlineCloudUpload />
                   <p>Upload</p>
-                </div>
+                  <input
+                    id="uploadAudio"
+                    onChange={uploadFileAudio}
+                    type="file"
+                    accept=".mp3,.aac,.flac,.alac,.aiff,.ape,.dsd,.mqa,.ogg,.opus,.wav,.wma"
+                  />
+                </label>
               </li>
             </ul>
           </div>
@@ -103,10 +132,16 @@ const GalleryAddModal: NextPage<GalleryAddModalType> = ({ ChangePupUp }) => {
                 </div>
               </li>
               <li>
-                <div>
+                <label htmlFor="uploadReference">
                   <AiOutlineCloudUpload />
                   <p>Upload</p>
-                </div>
+                  <input
+                    id="uploadReference"
+                    type="file"
+                    onChange={uploadFileImage}
+                    accept=".mp4,.png"
+                  />
+                </label>
               </li>
             </ul>
           </div>

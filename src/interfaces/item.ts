@@ -7,6 +7,12 @@ export type ItemScore = {
     comments?: Array<CommentsScore>
 }
 
+export type ItemMini = {
+    name: string;
+    audio?: string;
+    references?: Array<ReferencesScore>;
+}
+
 export type ItemResponse = {
     _id: string;
     userId: string;

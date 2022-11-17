@@ -21,7 +21,7 @@
             li {
                 width: 100%;
                 cursor: pointer;
-                div {
+                div, label {
                     margin: 0 10px;
                     display: flex;
                     flex-direction: column;
@@ -30,15 +30,18 @@
                     padding: 1em 0;
                     border: solid 2px var(--bgPrimary2);
                     border-radius: 10px;
+                    input {
+                        display: none;
+                    }
                     &:hover {
                         background-color: var(--bgPrimaryCleanHover);
                     }
-                    p, svg {
-                        color: var(--modalColor);
-                        fill: var(--modalColor);
-                    }
                     svg {
+                        fill: var(--modalColor);
                         font-size: 30px;
+                    }
+                    p {
+                        color: #000;
                     }
                 }
             }

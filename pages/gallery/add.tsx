@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
-import { ItemScore } from "../../src/interfaces/item";
+import { ItemMini } from "../../src/interfaces/item";
 import { LangListScore } from "../../src/interfaces/LangList";
 import { api } from "../../src/utils/api";
 import GalleryAdd from "../../src/views/gallery/add";
@@ -12,7 +12,7 @@ const Add: NextPage = () => {
   const [lang, setLang] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [image, setImage] = useState<string>("");
-  const [itens, setItens] = useState<Array<ItemScore>>([]);
+  const [itens, setItens] = useState<Array<ItemMini>>([]);
 
   useEffect(() => {
     api.get("/lang").then((res) => {

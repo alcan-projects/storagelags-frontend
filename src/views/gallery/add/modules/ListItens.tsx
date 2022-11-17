@@ -9,9 +9,9 @@ import Button from "../../../../components/Button";
 import PlayAudio from "../../../../components/PlayAudio";
 
 // interfaces
-import { ItemScore } from "../../../../interfaces/item";
+import { ItemMini } from "../../../../interfaces/item";
 type ListItemType = {
-  item: ItemScore;
+  item: ItemMini;
 };
 
 // styles

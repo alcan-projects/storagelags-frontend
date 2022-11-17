@@ -15,7 +15,7 @@ import Select from "../../../components/Select";
 import Information from "../../../components/Information/Index";
 
 // interfaces
-import { ItemScore } from "../../../interfaces/item";
+import { ItemMini } from "../../../interfaces/item";
 import GalleryAddModal from "./modules/ModalAdd";
 import ListItem from "./modules/ListItens";
 import { LangListScore } from "../../../interfaces/LangList";
@@ -38,8 +38,8 @@ type GalleryAddType = {
     setName: (value: string) => void;
     image: string;
     setImage: (value: string) => void;
-    itens: Array<ItemScore>;
-    setItens: (value: Array<ItemScore>) => void;
+    itens: Array<ItemMini>;
+    setItens: (value: Array<ItemMini>) => void;
   };
 };
 
