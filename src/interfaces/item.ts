@@ -1,35 +1,35 @@
 export type ItemScore = {
-    userId: string;
-    galleryId: string;
-    name: string;
-    audio?: string;
-    references?: Array<ReferencesScore>;
-    comments?: Array<CommentsScore>
-}
+  userId: string;
+  galleryId: string;
+  name: string;
+  audio?: string;
+  references?: Array<ReferencesScore>;
+  comments?: Array<CommentsScore>;
+};
 
 export type ItemMini = {
-    name: string;
-    audio?: string;
-    references?: Array<ReferencesScore>;
-}
+  name: string;
+  audio?: string;
+  references?: Array<ReferencesScore>;
+};
 
 export type ItemResponse = {
-    _id: string;
-    userId: string;
-    galleryId: string;
-    name: string;
-    audio?: string;
-    references?: Array<ReferencesScore>;
-    comments?: Array<CommentsScore>;
-    createdAt: number;
-    updatedAt: number
-}
+  _id: string;
+  userId: string;
+  galleryId: string;
+  name: string;
+  audio?: string;
+  references?: Array<ReferencesScore>;
+  comments?: Array<CommentsScore>;
+  createdAt: number;
+  updatedAt: number;
+};
 
 export type ReferencesScore = {
-    type: "audio" | "video" | "image";
-    body: string
-}
+  type: "video" | "image";
+  body: string;
+};
 export type CommentsScore = {
-    body: string;
-    userId: string
-}
+  body: string;
+  userId: string;
+};

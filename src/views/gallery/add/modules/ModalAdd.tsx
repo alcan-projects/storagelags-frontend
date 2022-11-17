@@ -30,14 +30,14 @@ type GalleryAddModalType = {
 
 const GalleryAddModal: NextPage<GalleryAddModalType> = ({ ChangePupUp }) => {
   const [name, setName] = useState("");
-  const [audio, setAudio] = useState("");
+  const [audio, setAudio] = useState("/test10s.mp3");
   const [references, setReferences] = useState<Array<ReferencesScore>>([]);
 
   function uploadFileAudio(e: any) {
     apiFile
-      .post("/upload/image", { file: e.target.files[0] })
+      .post("/upload/audio", { file: e.target.files[0] })
       .then((res) => {
-        console.log(res.data);
+        setAudio(res.data.file);
       })
       .catch((error) => {
         console.log(error);
@@ -48,7 +48,13 @@ const GalleryAddModal: NextPage<GalleryAddModalType> = ({ ChangePupUp }) => {
     apiFile
       .post("/upload/image", { file: e.target.files[0] })
       .then((res) => {
-        console.log(res.data);
+        setReferences([
+          ...references,
+          {
+            type: "image",
+            body: res.data.file,
+          },
+        ]);
       })
       .catch((error) => {
         console.log(error);
@@ -73,8 +79,8 @@ const GalleryAddModal: NextPage<GalleryAddModalType> = ({ ChangePupUp }) => {
           </div>
           <div className={style.boxOptions}>
             <p>Áudio:</p>
-            <AudioPlay />
-            <AudioGravar />
+            {audio.length > 0 && <AudioPlay audio={audio} />}
+            {false && <AudioGravar />}
             <ul>
               <li>
                 <div>
@@ -104,20 +110,7 @@ const GalleryAddModal: NextPage<GalleryAddModalType> = ({ ChangePupUp }) => {
           </div>
           <div className={style.boxOptions}>
             <p>Referências:</p>
-            <ReferencesListModal
-              list={[
-                {
-                  title: "link test",
-                  type: "image",
-                  url: "https://fluencycorp.com/wp-content/uploads/2019/01/hardest-part-learning-english.jpg",
-                },
-                {
-                  title: "link test",
-                  type: "image",
-                  url: "https://image.shutterstock.com/image-vector/english-language-hand-drawn-doodles-260nw-1196303542.jpg",
-                },
-              ]}
-            />
+            <ReferencesListModal itemName={name || ""} list={references} />
             <ul>
               <li>
                 <div>

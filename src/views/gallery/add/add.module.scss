@@ -6,6 +6,7 @@
     .inputsGalerry {
         span {
             display: flex;
+            color: var(--colorPrimary);
         }
         input, select {
             width: 100%;
@@ -32,6 +33,9 @@
         background-color: var(--bgSecund);
         margin-top: 4em;
         padding: 1em;
+        span {
+            color: var(--colorPrimary);
+        }
         .listItem {
             max-height: 400px;
             overflow-y: auto;

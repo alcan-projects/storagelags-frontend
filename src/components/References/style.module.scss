@@ -22,7 +22,8 @@
             align-items: center;
             cursor: pointer;
             svg {
-                fill: var(--Modal);
+                fill: var(--colorPrimary);
+                color: var(--colorPrimary);
             }
         }
     }

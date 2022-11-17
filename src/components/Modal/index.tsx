@@ -8,7 +8,7 @@ type ModalType = {
 
 const Modal: NextPage<ModalType> = ({ props, closed }) => {
   return (
-    <div className={style.Modal}>
+    <div className={style.Modal} key={props}>
       <section>{props}</section>
       <div className={style.closed} onClick={closed}></div>
     </div>

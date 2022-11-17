@@ -1,5 +1,6 @@
 :root {
   --bgPrimary: #1a1919;
+  --colorPrimary: #fff;
   --bgPrimaryHover: #504f4f;
   --bgPrimaryCleanHover: #efeded;
   --bgSecund: #121111;
@@ -16,7 +17,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
@@ -55,4 +55,5 @@ li {
 
 h1 {
   font-size: 34px;
+  color: var(--colorPrimary);
 }
