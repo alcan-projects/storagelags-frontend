@@ -21,6 +21,7 @@ import Button from "../../../../components/Button";
 // styles
 import style from "./ModalAdd.style.module.scss";
 import Utils from "../../../../styles/Utils.module.scss";
+import { ReferencesScore } from "../../../../interfaces/item";
 
 type GalleryAddModalType = {
   ChangePupUp: () => void;
@@ -28,6 +29,8 @@ type GalleryAddModalType = {
 
 const GalleryAddModal: NextPage<GalleryAddModalType> = ({ ChangePupUp }) => {
   const [name, setName] = useState("");
+  const [audio, setAudio] = useState("");
+  const [references, setReferences] = useState<Array<ReferencesScore>>([]);
 
   return (
     <Modal

@@ -3,8 +3,8 @@ export type ItemScore = {
     galleryId: string;
     name: string;
     audio?: string;
-    references?: Array<References>;
-    comments?: Array<Comments>
+    references?: Array<ReferencesScore>;
+    comments?: Array<CommentsScore>
 }
 
 export type ItemResponse = {
@@ -13,17 +13,17 @@ export type ItemResponse = {
     galleryId: string;
     name: string;
     audio?: string;
-    references?: Array<References>;
-    comments?: Array<Comments>;
+    references?: Array<ReferencesScore>;
+    comments?: Array<CommentsScore>;
     createdAt: number;
     updatedAt: number
 }
 
-export type References = {
+export type ReferencesScore = {
     type: "audio" | "video" | "image";
     body: string
 }
-export type Comments = {
+export type CommentsScore = {
     body: string;
     userId: string
 }
