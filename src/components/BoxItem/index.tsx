@@ -14,13 +14,12 @@ import { IoReloadOutline } from "react-icons/io5";
 import style from "./style.module.scss";
 
 // interfaces
-import { Comments, References } from "../../interfaces/item";
 import { BiNews } from "react-icons/bi";
 type BoxItemType = {
   name: string;
   audio?: string;
-  references?: Array<References>;
-  comments?: Array<Comments>;
+  references?: Array<any>;
+  comments?: Array<any>;
 };
 
 const BoxItem: NextPage<BoxItemType> = ({
